@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Electric Field Simulation</title>
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <link rel="icon" type="image/x-icon" href="/assets/electric-icon.ico?v=2">
+
+
+    <script src="/src/main.js" defer></script>
+    <script src="/src/field-point.js" defer></script>
+    <script src="/src/propagation.js" defer></script>
+    <script src="/src/particle.js" defer></script>
+    <script src="/src/utils.js" defer></script>
+</head>
+<body>
+    <div id="titleScreen">
+        <div class="title-content">
+            <h1>Electric Field Simulator</h1>
+            <h2>Created by Ricky</h2>
+            <p>Click anywhere to begin</p>
+        </div>
+    </div>
+
+    <canvas id="canvas" width="1200" height="800"></canvas>
+    <div id="ui">
+        <img src="/assets/images/trash-can-icon.png" id="clearBtn">
+
+        <a href = "https://github.com/QwertyuiopIsTaken" target = "_blank"><img src="/assets/images/github-icon.png" id="githubBtn"></a>
+
+        <div id="settings">
+            <img src="/assets/images/settings-icon.png" id="settingsBtn">
+            
+            <div id="settingsPanel">
+                <label>
+                    <input type="checkbox" id="optimizeToggle" checked>
+                    Optimize
+                </label>
+                <label>
+                    <input type="checkbox" id="waveToggle">
+                    Display Waves
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+  font-family: "Poppins", "Tahoma", "sans-serif";
+}
+
+#titleScreen {
+  position: fixed;
+  inset: 0;
+  background: rgb(255, 230, 180);
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.title-content {
+  text-align: center;
+}
+
+.title-content h1 {
+  font-size: 80px;
+  margin-bottom: 1px;
+}
+.title-content h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.title-content p {
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+canvas {
+  display: block;
+}
+
+/* UI overlay */
+#ui {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+#clearBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+
+  width: 65px;
+  height: 65px;
+
+  pointer-events: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgb(255, 255, 255);
+  border: 3px solid rgba(255, 255, 255);
+  border-radius: 25%;
+}
+
+#clearBtn:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+#settings {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  pointer-events: auto;
+}
+
+#settingsBtn {
+  width: 45px;
+  height: 45px;
+
+  color: white;
+  padding: 2px;
+
+  background: rgba(255, 255, 255);
+  border: 2px solid rgba(255, 255, 255);
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+#settingsBtn:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+#settingsPanel {
+  position: absolute;
+  top: 60px;
+  right: 0;
+
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 10px 12px;
+  min-width: 160px;
+
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+
+  color: white;
+  font-size: 14px;
+}
+
+#settingsPanel label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+#settingsPanel input {
+  cursor: pointer;
+}
+
+#githubBtn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+  width: 40px;
+  height: 40px;
+
+  pointer-events: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgb(255, 255, 255);
+  border: 2px solid rgba(255, 255, 255);
+  border-radius: 50%;
+}
+
+#githubBtn:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
