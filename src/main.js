@@ -8,7 +8,7 @@ const settingsPanel = document.getElementById("settingsPanel");
 const optimizeToggle = document.getElementById("optimizeToggle");
 const waveToggle = document.getElementById("waveToggle");
 
-const FIELD_INTERVALS = 20;
+const FIELD_INTERVALS = 25;
 const ARROW_HEAD_SIZE = 5;
 const ARROW_LENGTH = 15;
 
@@ -176,11 +176,18 @@ function dragParticle() {
 }
 
 function updateField() {
-    for (let i = 0; i < fieldPoints.length; i++) {
-        for (let j = 0; j < fieldPoints[0].length; j++) {
-            const fieldPos = {x: i * FIELD_INTERVALS, y: j * FIELD_INTERVALS};
+    const cols = Math.floor(canvas.width / FIELD_INTERVALS) + 1;
+    const rows = Math.floor(canvas.height / FIELD_INTERVALS) + 1;
 
-            for (const pr of props) {
+    for (const pr of props) {
+        const startI = Math.max(0, Math.floor((pr.pos.x - pr.radius) / FIELD_INTERVALS));
+        const endI = Math.min(cols - 1, Math.ceil((pr.pos.x + pr.radius) / FIELD_INTERVALS));
+        const startJ = Math.max(0, Math.floor((pr.pos.y - pr.radius) / FIELD_INTERVALS));;
+        const endJ = Math.min(rows - 1, Math.ceil((pr.pos.y + pr.radius) / FIELD_INTERVALS));;
+
+        for (let i = startI; i <= endI; i++) {
+            for (let j = startJ; j <= endJ; j++) {
+                const fieldPos = {x: i * FIELD_INTERVALS, y: j * FIELD_INTERVALS};
                 if (pr.containsPoint(fieldPos.x, fieldPos.y)) {
                     let netForce = {x: 0, y: 0};
 
